@@ -16,8 +16,11 @@ class GeWeather(QWidget):
         self.l_pressure = QLabel('')
         self.l_humidity = QLabel('')
         self.l_wind = QLabel('')
+        self.l_error = QLabel('')
         self.btn_get = QPushButton('Obtain weather')
         self.btn_get.clicked.connect(self.get_weather)
+
+        self.le_city.returnPressed.connect(self.get_weather)
 
         hbox1 = QHBoxLayout()
         hbox1.addWidget(self.l_city)
@@ -65,6 +68,11 @@ class GeWeather(QWidget):
             self.l_wind.setText(f"Wind Speed : {wind} m/s")
         else:
             self.l_temp.setText(f"Error: {response.status_code}")
+            self.l_desc.setText(f"Description: {response.status_code}")
+            self.l_pressure.setText(f"Pressure: {response.status_code} hPa")
+            self.l_humidity.setText(f"Humidity : {response.status_code}%")
+            self.l_wind.setText(f"Wind Speed : {response.status_code} m/s")
+            self.l_error.setText(f"An error was occured")
 
 
 if __name__ == '__main__':
