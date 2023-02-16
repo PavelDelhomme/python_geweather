@@ -1,15 +1,37 @@
 import sys
 import requests
 import random
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QStyle
+from PyQt5.QtGui import QPalette, QColor
 from libs import list_example_towns
+from PyQt5.QtWidgets import QMainWindow
 
-class GeWeather(QWidget):
+class GeWeather(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.initUI()
+        self.setupUI()
 
-    def initUI(self):
+    def setupUI(self):
+        self.app = QApplication([])
+        self.app.setStyle("Fusion")
+        palette = QPalette()
+        palette.setColor(QPalette.Window, QColor(240, 240, 240))
+        palette = QPalette()
+        palette.setColor(QPalette.Window, QColor(53, 53, 53))
+        palette.setColor(QPalette.WindowText, QColor(255, 255, 255))
+        palette.setColor(QPalette.Base, QColor(15, 15, 15))
+        palette.setColor(QPalette.AlternateBase, QColor(53, 53, 53))
+        palette.setColor(QPalette.ToolTipBase, QColor(255, 255, 255))
+        palette.setColor(QPalette.ToolTipText, QColor.white)
+        palette.setColor(QPalette.Text, QColor.white)
+        palette.setColor(QPalette.Button, QColor(53, 53, 53))
+        palette.setColor(QPalette.ButtonText, QColor.white)
+        palette.setColor(QPalette.BrightText, QColor.red)
+        palette.setColor(QPalette.Link, QColor(42, 130, 218))
+        palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
+        palette.setColor(QPalette.HighlightedText, QColor.black)
+        self.setPalette(palette)
+
         self.l_city = QLabel('Enter the city name\'s : ')
         self.le_city = QLineEdit()
         self.l_temp = QLabel('')
@@ -19,6 +41,10 @@ class GeWeather(QWidget):
         self.l_wind = QLabel('')
         self.l_error = QLabel('')
         self.btn_get = QPushButton('Obtain weather')
+
+        icon = self.style().standardIcon(getattr(QStyle, "SP_MessageBoxInformation"))
+        self.btn_get.setIcon(icon)
+
         self.btn_get.clicked.connect(self.get_weather)
 
         self.le_city.setPlaceholderText(f"Ex: {random.choice(list_example_towns)}")
