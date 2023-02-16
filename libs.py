@@ -1,0 +1,12 @@
+list_example_towns = ["Paris", "Marseille", "Tokyo", "New York", "Londres",
+                     "Nantes", "Rennes", "Shangai", "New Delhi", "Mumbai",
+                     "Pékin", "Le Caire", "Mexico", "Dacca", "Osaka", "Manille",
+                      "Séoul", "Lagos", "Beijing", "Moscou", "Ekaterinbourg",
+                      "Los Angeles", "Téhéran", "Istanbul", "Bagdad", "Wuhan",
+                      "Suzhou", "Bogota", "Santiago", "Singapour", "Busan",
+                      "Alger", "Nairobi", "Hong Kong", "Philadelphie",
+                      "Miami", "Atlanta", "Madrid", "Surate", "Toronto",
+                      "Saint-Pétersbourg", "Pune", "Amman", "Colombo",
+                      "Ankara", "Guatemala", "Doubaï", "Sydney", "Alexandrie",
+                      "Medan", "Seattle", "¨Phoenix", "Koweit", "Jinan", "Montréal",
+                      "Bamako", "Rome", "Casablanca", "Nanchang", "Dakar", "Athène"]

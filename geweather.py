@@ -1,7 +1,8 @@
 import sys
 import requests
+import random
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout
-
+from libs import list_example_towns
 
 class GeWeather(QWidget):
     def __init__(self):
@@ -20,6 +21,7 @@ class GeWeather(QWidget):
         self.btn_get = QPushButton('Obtain weather')
         self.btn_get.clicked.connect(self.get_weather)
 
+        self.le_city.setPlaceholderText(f"Ex: {random.choice(list_example_towns)}")
         self.le_city.returnPressed.connect(self.get_weather)
 
         hbox1 = QHBoxLayout()
@@ -54,6 +56,7 @@ class GeWeather(QWidget):
         api_key = "a34a9a778666f31118df724af632c616"
         url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
         response = requests.get(url)
+        print(response.status_code)
         if response.status_code == 200:
             data = response.json()
             temp = data['main']['temp']
@@ -66,6 +69,22 @@ class GeWeather(QWidget):
             self.l_pressure.setText(f"Pressure: {pressure} hPa")
             self.l_humidity.setText(f"Humidity : {humidity}%")
             self.l_wind.setText(f"Wind Speed : {wind} m/s")
+        elif response.status_code == "404":
+            self.l_city.setText("Error : Not Found")
+            self.l_temp.setText(f"Error : Not Found")
+            self.l_desc.setText(f"Error : Not Found")
+            self.l_pressure.setText(f"Error : Not Found")
+            self.l_humidity.setText(f"Error : Not Found")
+            self.l_wind.setText(f"Error : Not Found")
+            self.l_error.setText(f"Error : Not Found")
+        elif response.status_code == 400:
+            self.l_city.setText("Error : Nothing to search")
+            self.l_temp.setText(f"Error : Nothing to search")
+            self.l_desc.setText(f"Error : Nothing to search")
+            self.l_pressure.setText(f"Error : Nothing to search")
+            self.l_humidity.setText(f"Error : Nothing to search")
+            self.l_wind.setText(f"Error : Nothing to search")
+            self.l_error.setText(f"Error : Nothing to search")
         else:
             self.l_temp.setText(f"Error: {response.status_code}")
             self.l_desc.setText(f"Description: {response.status_code}")
