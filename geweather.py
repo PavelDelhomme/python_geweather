@@ -3,20 +3,20 @@ import requests
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout
 
 
-class WeatherApp(QWidget):
+class GeWeather(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
-        self.l_city = QLabel('Entre le nom de la ville : ')
+        self.l_city = QLabel('Enter the city name\'s : ')
         self.le_city = QLineEdit()
         self.l_temp = QLabel('')
         self.l_desc = QLabel('')
         self.l_pressure = QLabel('')
         self.l_humidity = QLabel('')
         self.l_wind = QLabel('')
-        self.btn_get = QPushButton('Obtenir la météo')
+        self.btn_get = QPushButton('Obtain weather')
         self.btn_get.clicked.connect(self.get_weather)
 
         hbox1 = QHBoxLayout()
@@ -69,5 +69,5 @@ class WeatherApp(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    weather_app = WeatherApp()
+    GeWeather_app = GeWeather()
     sys.exit(app.exec_())
