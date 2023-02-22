@@ -32,7 +32,7 @@ Q: Comment obtenir une clé d'API OpenWeatherMap ?
 A: Vous pouvez obtenir une clé d'API gratuite en vous inscrivant sur leur site web.
 Contact
 
-Si vous avez des questions ou des problèmes avec l'application, n'hésitez pas à me contacter à l'adresse e-mail suivante : [votre adresse e-mail].
+Si vous avez des questions ou des problèmes avec l'application, n'hésitez pas à me contacter à l'adresse e-mail suivante : contact[at]delhomme[point]ovh
 Licence
 
 Ce projet est sous licence MIT. Vous pouvez le modifier et le distribuer librement. Veuillez consulter le fichier LICENCE pour plus d'informations.
