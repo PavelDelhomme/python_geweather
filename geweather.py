@@ -6,6 +6,7 @@ from PyQt5.QtGui import QPalette, QColor
 from libs import list_example_towns
 from PyQt5.QtWidgets import QMainWindow
 
+
 class GeWeather(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -16,20 +17,19 @@ class GeWeather(QMainWindow):
         self.app.setStyle("Fusion")
         palette = QPalette()
         palette.setColor(QPalette.Window, QColor(240, 240, 240))
-        palette = QPalette()
         palette.setColor(QPalette.Window, QColor(53, 53, 53))
         palette.setColor(QPalette.WindowText, QColor(255, 255, 255))
         palette.setColor(QPalette.Base, QColor(15, 15, 15))
         palette.setColor(QPalette.AlternateBase, QColor(53, 53, 53))
         palette.setColor(QPalette.ToolTipBase, QColor(255, 255, 255))
-        palette.setColor(QPalette.ToolTipText, QColor.white)
-        palette.setColor(QPalette.Text, QColor.white)
+        palette.setColor(QPalette.ToolTipText, QColor(255, 255, 255))
+        palette.setColor(QPalette.Text, QColor(255, 255, 255))
         palette.setColor(QPalette.Button, QColor(53, 53, 53))
-        palette.setColor(QPalette.ButtonText, QColor.white)
-        palette.setColor(QPalette.BrightText, QColor.red)
+        palette.setColor(QPalette.ButtonText, QColor(255, 255, 255))
+        palette.setColor(QPalette.BrightText, QColor(255, 0, 0))
         palette.setColor(QPalette.Link, QColor(42, 130, 218))
         palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
-        palette.setColor(QPalette.HighlightedText, QColor.black)
+        palette.setColor(QPalette.HighlightedText, QColor(0, 0, 0))
         self.setPalette(palette)
 
         self.l_city = QLabel('Enter the city name\'s : ')
