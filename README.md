@@ -1,8 +1,8 @@
-Application météo
+# Application météo
 
 Cette application météo est conçue pour permettre aux utilisateurs d'obtenir rapidement et facilement des informations météorologiques à partir d'une interface utilisateur simple et conviviale. Elle utilise l'API OpenWeatherMap pour récupérer les données météorologiques pour la ville saisie par l'utilisateur.
 
-#Installation
+# Installation
 
 <ol>
 <li>Tout d'abord, vous devez avoir Python 3.9 installé sur votre ordinateur.</li>
@@ -28,11 +28,11 @@ Gère les erreurs pour afficher des messages d'erreur clairs lorsque des problè
 
 # FAQ
 
-Q: Comment obtenir une clé d'API OpenWeatherMap ?
+Q: Comment obtenir une clé d'API OpenWeatherMap ?<br/>
 A: Vous pouvez obtenir une clé d'API gratuite en vous inscrivant sur leur site web.
 Contact
 
-Si vous avez des questions ou des problèmes avec l'application, n'hésitez pas à me contacter à l'adresse e-mail suivante : contact[at]delhomme[point]ovh
+Si vous avez des questions ou des problèmes avec l'application, n'hésitez pas à me contacter à l'adresse e-mail suivante : <a href="mailto:contact@delhomme.ovh">contact@delhomme.ovh</a>
 Licence
 
 Ce projet est sous licence MIT. Vous pouvez le modifier et le distribuer librement. Veuillez consulter le fichier LICENCE pour plus d'informations.
